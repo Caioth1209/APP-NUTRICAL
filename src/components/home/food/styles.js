@@ -1,24 +1,29 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container:{
-        flex: 1/12,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#93c572",
+    buttonContainer:{
+        flex: 1,
+        flexDirection: "column",
+        width: "95%",
+        padding: "5%",
+        alignSelf: "center",
+        marginTop: "5%",
+        marginLeft: "3%",
+        backgroundColor: "#569099",
+        borderRadius: "20%"
     },
-    boxAppTitle:{
-        justifyContent:"center",
-        alignItems: "center",
-        width: "80%",
-    },
-    appTitle:{
-        color: "#fff",
+    titleText:{
+        color: "#f6d809",
         fontWeight: "bold",
-        marginLeft: "15%"
+        fontStyle: "italic",
+        fontSize: 13,
+        padding: 5,
     },
-    boxSearchButton:{
-        width: "10%"
-    }
+    infoText:{
+        color: "white",
+        fontWeight: "bold",
+        fontStyle: "normal",
+        fontSize: 14,
+        padding: 5,
+    },
 })

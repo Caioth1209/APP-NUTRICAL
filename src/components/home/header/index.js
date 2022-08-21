@@ -10,7 +10,7 @@ export default function App(props) {
         <SafeAreaView style={styles.container}>
 
             <View style={styles.boxAppTitle}>
-                <Text style={styles.appTitle}>NUTRICAL</Text>
+                <Text style={styles.appTitle}>ALIMENTOS</Text>
             </View>
 
             <View style={styles.boxSearchButton}>

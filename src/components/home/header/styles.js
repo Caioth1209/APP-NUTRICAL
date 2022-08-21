@@ -7,6 +7,7 @@ export default StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#93c572",
+        marginBottom: "5%"
     },
     boxAppTitle:{
         justifyContent:"center",

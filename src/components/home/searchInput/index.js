@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { View, TextInput } from 'react-native';
 import styles from './styles'
 
-export default function App() {
+export default function App(props) {
 
     return (    
         <View
@@ -11,6 +11,7 @@ export default function App() {
             <TextInput
             placeholder="Digite o nome do alimento"
             style={styles.searchInput}
+            onChangeText={props.handleSearch}
             />
         </View>
     );
