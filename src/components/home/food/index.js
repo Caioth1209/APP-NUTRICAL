@@ -14,7 +14,7 @@ export default function App(props) {
 
             <View style={styles.container}>
                 <Text style={styles.titleText}>Categoria:</Text>
-                <Text style={styles.infoText}>{props.category}</Text>
+                <Text style={styles.infoText}>{props.categoryName}</Text>
             </View>
         </TouchableOpacity>
     );

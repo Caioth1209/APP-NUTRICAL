@@ -8,12 +8,12 @@ export default StyleSheet.create({
         marginBottom: "5%",
     },
     searchInput:{
-        width: "80%",
+        width: "85%",
         borderColor: "black",
         borderWidth: 2,
         borderColor: "#93c572",
         borderRadius: 10,
-        padding: 12,
+        padding: 10,
         color: "black",
         fontWeight: "bold",
     }

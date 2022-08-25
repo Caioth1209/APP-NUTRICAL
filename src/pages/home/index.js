@@ -4,27 +4,19 @@ import { SafeAreaView, View, Text } from 'react-native';
 import Header from "../../components/home/header"
 import SearchInput from "../../components/home/searchInput"
 import FoodList from "../../components/home/foodList"
+import CategoryList from "../../components/home/categoryList"
 import api from "../../services/api"
 import styles from './styles';
 
 
 export default function App() {
 
-    const [foodList, setFoodList] = useState([]);
     const [categoryList, setCategoryList] = useState([]);
+    const [categoryId, setCategoryId] = useState(0);
+    const [enableSearch, isEnableSearch] = useState(false);
+    const [foodSearch, handleFoodSearch] = useState("");
 
     useEffect(()=>{
-        api.get("food/")
-        .then((data)=>{
-            return data.data;
-        })
-        .then((data)=>{
-            setFoodList(data);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-
         api.get(`category/`)
         .then((data)=>{
             return data.data;
@@ -37,33 +29,35 @@ export default function App() {
         })
     }, [])
 
-    const [enableSearch, setEnableSearch] = useState(false);
-
     return (    
         <View style={styles.container}>
 
             <StatusBar style="auto" />  
 
             <Header
-            handleEnableSearch={setEnableSearch}
+            handleEnableSearch={isEnableSearch}
             enableSearch={enableSearch}
+            handleFoodSearch={handleFoodSearch}
             />
 
-            {enableSearch &&  <SearchInput/>}
+            {enableSearch &&  
+            <SearchInput
+            handleFoodSearch={handleFoodSearch}
+            foodSearch={foodSearch}
+            categoryId={categoryId}
+            />}
 
-            {foodList.length > 0 && 
-                <FoodList
-                foodList={foodList}
-                categoryList={categoryList}
-                maxToRenderPerBatch={5}
-                />
-            }
-
-            {foodList.length == 0 && 
-                <View style={styles.containerUnfoundFood}>
-                    <Text style={styles.textUnfoundFood}>Nenhum alimento encontrado</Text>
-                </View>
-            }
+            <CategoryList
+            categoryList={categoryList}
+            handleCategoryId={setCategoryId}
+            handleCategoryList={setCategoryList}
+            />
+            
+            <FoodList
+            categoryList={categoryList}
+            categoryId={categoryId}
+            foodSearch={foodSearch}
+            />
         </View>
     );
 }

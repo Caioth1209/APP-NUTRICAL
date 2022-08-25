@@ -16,6 +16,9 @@ export default function App(props) {
             <View style={styles.boxSearchButton}>
                 <TouchableOpacity
                     onPress={()=>{
+                        if(props.enableSearch){
+                            props.handleFoodSearch("");
+                        }
                         props.handleEnableSearch(!props.enableSearch)
                     }}
                 >
