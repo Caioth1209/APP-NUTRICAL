@@ -1,6 +1,6 @@
 # NUTRICAL
 
-- Esse projeto tem o objetivo de guiar as pessoas para o consumo de certos alimentos, em relação as calorias e macro nutrientes.
+- Esse projeto tem o objetivo de guiar as pessoas para o consumo de certos alimentos em relação as calorias e macro nutrientes.
 - Ainda está em processo de desenvolvimento! 
 
 ## Tecnologias utilizadas
